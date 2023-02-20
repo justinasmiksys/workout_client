@@ -65,7 +65,7 @@ const Calendar = () => {
   }
 
   const removeEvent = async (eventId) => {
-    let response = await deleteEvent(eventId)
+    let response = await deleteEvent(authTokens, eventId)
 
     if (response.statusText === 'Unauthorized') {
       logoutUser()
