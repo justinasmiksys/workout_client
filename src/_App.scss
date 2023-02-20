@@ -1,0 +1,50 @@
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.fc-daygrid-event-harness {
+    position: relative;
+    z-index: 1;
+  
+    &:hover {
+      cursor: pointer;
+    }
+  
+    &::after,
+    &::before {
+      visibility: hidden;
+      height: 2px;
+      width: 20px;
+      background-color: black;
+      position: absolute;
+      right: 10px;
+      z-index: 10;
+      transition: all 0.5s;
+    }
+  
+    &::before {
+      top: 7px;
+    }
+  
+    &::after {
+      top: 17px;
+    }
+  
+    &:hover:after,
+    &:hover:before {
+      visibility: visible;
+      background-color: white;
+    }
+  
+    &:hover:after {
+      transform: rotate(45deg) translateY(-7px);
+    }
+  
+    &:hover:before {
+      transform: rotate(-45deg) translateY(7px);
+    }
+}
